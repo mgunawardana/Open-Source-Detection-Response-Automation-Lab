@@ -195,15 +195,14 @@ Now Wazuh Dashboard displays:
 **Index:** `wazuh-archives-*`
 
 ---
+![Ossec.conf Configuration Changes](https://github.com/mihindigunawardana/soc-automation-part-2/blob/main/Ossec.conf%20Configuration%20Changes.png)
 
-### **Screenshots to include:**
-
-✔ archives index visible in Wazuh
-✔ ossec.conf configuration changes
+---
+![Archives Index Visible In Wazuh](https://github.com/mihindigunawardana/soc-automation-part-2/blob/main/Archives%20Index%20Visible%20In%20Wazuh.png)
 
 ---
 
-# **7. Testing Detection — Running Mimikatz**
+# **5. Testing Detection — Running Mimikatz**
 
 Copied mimikatz.exe to Windows.
 Executed to generate Sysmon logs.
@@ -219,15 +218,14 @@ wazuh-archives-*
 Re-ran Mimikatz → logs visible.
 
 ---
+![Mimikatz Execution](https://github.com/mihindigunawardana/soc-automation-part-2/blob/main/Mimikatz%20Execution.png)
 
-### **Screenshots to include:**
-
-✔ Mimikatz execution
-✔ Logs appearing under wazuh-archives-*
+---
+![Mimikatz Logs Appearing Under Archives Index](https://github.com/mihindigunawardana/soc-automation-part-2/blob/main/Mimikatz%20Logs%20Appearing%20Under%20Archives%20Index.png)
 
 ---
 
-# **8. Creating a Custom Wazuh Rule**
+# **6. Creating a Custom Wazuh Rule**
 
 Added the following custom detection rule:
 
@@ -249,16 +247,14 @@ Re-ran Mimikatz → alert appeared under `wazuh-alerts`.
 Rule triggered successfully.
 
 ---
+![Custom Rule Creation](https://github.com/mihindigunawardana/soc-automation-part-2/blob/main/Custom%20Rule%20Creation.png)
 
-### **Screenshots to include:**
-
-✔ Custom rule XML
-✔ Wazuh alert showing rule ID + description
-✔ MITRE mapping visible
+---
+![Wazuh Alert Getting Triggered](https://github.com/mihindigunawardana/soc-automation-part-2/blob/main/Wazuh%20Alert%20Triggering.png)
 
 ---
 
-# **9. Shuffle SOAR Integration**
+# **7. Shuffle SOAR Integration**
 
 Accessed Shuffle via:
 
@@ -277,16 +273,11 @@ Restarted Wazuh Manager.
 Triggered Mimikatz again → alert arrived in Shuffle.
 
 ---
-
-### **Screenshots to include:**
-
-✔ Shuffle Workflow Canvas
-✔ Webhook Node
-✔ Alert arriving in Shuffle
+![Wazuh Sending Alert Over To SOAR](https://github.com/mihindigunawardana/soc-automation-part-2/blob/main/Wazuh%20Sending%20Alert%20Over%20To%20SOAR.png)
 
 ---
 
-# **10. SOAR Enrichment Workflow**
+# **8. SOAR Enrichment Workflow**
 
 ### Workflow Steps:
 
@@ -305,13 +296,16 @@ Triggered Mimikatz again → alert arrived in Shuffle.
    * Sends alert summary & VT results to analyst inbox
 
 ---
+![Regex Capture Node Configuration](https://github.com/mihindigunawardana/soc-automation-part-2/blob/main/Reegex%20Capture%20Node%20Configuration.png)
 
-### **Screenshots to include:**
+---
+![VirusTotal API Response](https://github.com/mihindigunawardana/soc-automation-part-2/blob/main/VirusTotal%20API%20Response.png)
 
-✔ Regex Capture Node config
-✔ VirusTotal API response
-✔ TheHive case created automatically
-✔ Email screenshot showing alert details
+---
+![The Hive Case Created Automatically](https://github.com/mihindigunawardana/soc-automation-part-2/blob/main/The%20Hive%20Case%20Created%20Automatically.png)
+
+---
+![Email Notification](https://github.com/mihindigunawardana/soc-automation-part-2/blob/main/Email%20Notification.png)
 
 ---
 
@@ -332,16 +326,6 @@ Setup:
 
 Cases are created automatically by the workflow.
 
----
-
-### **Screenshots to include:**
-
-✔ TheHive Login Page
-✔ Organization view
-✔ Case details created from Shuffle
-
----
-
 # **12. Validation Test**
 
 Ran Mimikatz on Windows again.
@@ -357,18 +341,6 @@ Pipeline:
 * Email sent with alert + enrichment
 
 Full workflow executed exactly as designed.
-
----
-
-### **Screenshots to include:**
-
-✔ Wazuh alert
-✔ Shuffle execution log
-✔ VirusTotal enrichment
-✔ TheHive case entry
-✔ Email received
-
----
 
 # **Threat Context**
 
@@ -418,6 +390,22 @@ Behavior is harder for attackers to modify, meaning this is a high-value detecti
 * Automated case creation in TheHive.
 * Sent out automated email notifications for analyst visibility.
 * Validated everything using real attacker tooling — not theory.
+
+---
+
+## **Resources**
+
+[Google Cloud Platform](https://cloud.google.com/?hl=en)
+
+[Wazuh Insta;;ation Guide](https://documentation.wazuh.com/current/quickstart.html)
+
+[Thehive Installation Guide](https://docs.strangebee.com/thehive/installation/installation-guide-linux-standalone-server/)
+
+[Shuffle Installation Guide](https://github.com/shuffle/shuffle/blob/main/.github/install-guide.md)
+
+[Mitre Att&ck Framework](https://attack.mitre.org/)
+
+[Virustotal](https://www.virustotal.com/gui/)
 
 ---
 
